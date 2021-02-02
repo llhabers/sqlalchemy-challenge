@@ -64,3 +64,9 @@ app = Flask(__name__)
 # When given the start only, calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date.
 
 # When given the start and the end date, calculate the TMIN, TAVG, and TMAX for dates between the start and end date inclusive.
+
+
+#  session.close()
+
+if __name__ == '__main__':
+    app.run(debug=True)
