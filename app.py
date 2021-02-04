@@ -35,12 +35,14 @@ app = Flask(__name__)
 def welcome():
     """List all available api routes."""
     return (
-        f"/api/v1.0/precipitation"
+        f"/api/v1.0/precipitations<br>"
         f"/api/v1.0/stations"
         f"/api/v1.0/tobs"
         f"/api/v1.0/<start>"
         f"/api/v1.0/<start>/<end>"
     )
+# /api/v1.0/2020-08-23
+
 
 # /api/v1.0/precipitation
 
@@ -78,96 +80,100 @@ def precipitation():
 
     # Create a dictionary for dates
     prcp_dates = []
-    for date, prcp in results:
+    for date, prcp in most_recent:
+        print(date,prcp)
         date_dict = {}
-        date_dict["date"] = prcp
+        date_dict[date] = prcp
         prcp_dates.append(date_dict)
 
     return jsonify(prcp_dates)
 
 
-# /api/v1.0/stations
+# # /api/v1.0/stations
 
-# Return a JSON list of stations from the dataset.
+# # Return a JSON list of stations from the dataset.
 
-@app.route("/api/v1.0/stations")
-def names():
-    # Create our session (link) from Python to the DB
-    session = Session(engine)
+# @app.route("/api/v1.0/stations")
+# def names():
+#     # Create our session (link) from Python to the DB
+#     session = Session(engine)
 
-    """Return a list of all passenger names"""
-    # Query all passengers
-    results = session.query(Passenger.name).all()
+#     """Return a list of all passenger names"""
+#     # Query all passengers
+#     results = session.query(Passenger.name).all()
 
-    session.close()
+#     session.close()
 
-    # Convert list of tuples into normal list
-    all_names = list(np.ravel(results))
+#     # Convert list of tuples into normal list
+#     all_names = list(np.ravel(results))
 
-    return jsonify(all_names)
+#     return jsonify(all_names)
 
-# /api/v1.0/tobs
+# # /api/v1.0/tobs
 
-# Query the dates and temperature observations of the most active station for the last year of data.
+# # Query the dates and temperature observations of the most active station for the last year of data.
 
-# Return a JSON list of temperature observations (TOBS) for the previous year.
+# # Return a JSON list of temperature observations (TOBS) for the previous year.
 
-@app.route("/api/v1.0/tobs")
-def names():
-    # Create our session (link) from Python to the DB
-    session = Session(engine)
+# @app.route("/api/v1.0/tobs")
+# def names():
+#     # Create our session (link) from Python to the DB
+#     session = Session(engine)
 
-    """Return a list of all passenger names"""
-    # Query all passengers
-    results = session.query(Passenger.name).all()
+#     """Return a list of all passenger names"""
+#     # Query all passengers
+#     results = session.query(Passenger.name).all()
 
-    session.close()
+#     session.close()
 
-    # Convert list of tuples into normal list
-    all_names = list(np.ravel(results))
+#     # Convert list of tuples into normal list
+#     all_names = list(np.ravel(results))
 
-    return jsonify(all_names)
+#     return jsonify(all_names)
 
-# /api/v1.0/<start>
+# # /api/v1.0/<start>
 
-# Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
+# # Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
+Date
+Min_Temp
+Ave_Temp
+Max_Temp
+# # When given the start only, calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date.
 
-# When given the start only, calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date.
+# @app.route("/api/v1.0/<start>")
+# def names():
+#     # Create our session (link) from Python to the DB
+#     session = Session(engine)
 
-@app.route("/api/v1.0/<start>")
-def names():
-    # Create our session (link) from Python to the DB
-    session = Session(engine)
+#     """Return a list of all passenger names"""
+#     # Query all passengers
+#     results = session.query(Passenger.name).all()
 
-    """Return a list of all passenger names"""
-    # Query all passengers
-    results = session.query(Passenger.name).all()
+#     session.close()
 
-    session.close()
+#     # Convert list of tuples into normal list
+#     all_names = list(np.ravel(results))
 
-    # Convert list of tuples into normal list
-    all_names = list(np.ravel(results))
+#     return jsonify(all_names)
 
-    return jsonify(all_names)
+# # /api/v1.0/<start>/<end>
+# # When given the start and the end date, calculate the TMIN, TAVG, and TMAX for dates between the start and end date inclusive.
 
-# /api/v1.0/<start>/<end>
-# When given the start and the end date, calculate the TMIN, TAVG, and TMAX for dates between the start and end date inclusive.
+# @app.route("/api/v1.0/<start>/<end")
+# def names():
+#     # Create our session (link) from Python to the DB
+#     session = Session(engine)
 
-@app.route("/api/v1.0/<start>/<end")
-def names():
-    # Create our session (link) from Python to the DB
-    session = Session(engine)
+#     """Return a list of all passenger names"""
+#     # Query all passengers
+#     results = session.query(Passenger.name).all()
 
-    """Return a list of all passenger names"""
-    # Query all passengers
-    results = session.query(Passenger.name).all()
+#     session.close()
 
-    session.close()
+#     # Convert list of tuples into normal list
+#     all_names = list(np.ravel(results))
 
-    # Convert list of tuples into normal list
-    all_names = list(np.ravel(results))
-
-    return jsonify(all_names)
+#     return jsonify(all_names)
 
 
 # /api/v1.0/<start> and /api/v1.0/<start>/<end>
