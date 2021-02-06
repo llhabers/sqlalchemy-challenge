@@ -10,11 +10,9 @@ I decided that I wanted to take a long holiday vacation in Honolulu, Hawaii. To 
 
 I decied to use SQLAlchemy and Flask app to conduct an analysis and well as creating a web page to review my results.
 
-### Task 1: Climate Analysis and Exploration
-<br>
-#### Precipitation Analysis
-Start by finding the most recent date in the data set.
-<br>
+### Task 1: Climate Analysis and Exploration<br>
+#### Precipitation Analysis<br>
+Start by finding the most recent date in the data set.<br>
 Using this date, retrieve the last 12 months of precipitation data by querying the 12 preceding months of data. Note you do not pass in the date as a variable to your query.
 <br>
 Select only the date and prcp values.
