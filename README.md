@@ -51,7 +51,23 @@ Return a JSON list of the minimum temperature, the average temperature, and the 
 When given the start only, calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date.<br>
 When given the start and the end date, calculate the TMIN, TAVG, and TMAX for dates between the start and end date inclusive.<br>
 
-## Action
+## Action<br>
+#### Climate Analysis and Exploration<br>
+I was able to use SQL and python syntax to conduct my analysis. Some of the syntax are;<br>
+SELECT<br>
+FROM<br>
+WHERE<br>
+GROUP_BY<br>
+ORDER_BY<br>
+FILTER<br>
+Statiscal function<br>
+Min<br>
+Max<br>
+Ave<br>
+Count<br>
+#### Climate App<br>
+In order for me to create an app for my data anaylsis, I had to create dictionaries for the data I retreived from Pandas. Once I was able to create dictionaries, I used for loops to pull all the information needed to create each app.
+
 
 ## Results<br>
 ![Precipitation](https://github.com/llhabers/sqlalchemy-challenge/blob/main/12_Months_Precipitation_Data.png)
