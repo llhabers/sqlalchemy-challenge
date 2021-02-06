@@ -8,7 +8,7 @@ I decided that I wanted to take a long holiday vacation in Honolulu, Hawaii. To 
 
 ## Task
 
-I decied to use SQLAlchemy and Flask app to conduct an analysis and well as creating a web page to review my results.
+I decided to use SQLAlchemy and Flask app to conduct an analysis and well as creating a web page to review my results.
 
 ### Task 1: Climate Analysis and Exploration<br>
 #### Precipitation Analysis<br>
@@ -60,17 +60,17 @@ WHERE<br>
 GROUP_BY<br>
 ORDER_BY<br>
 FILTER<br>
-Statiscal function<br>
+Statistical function<br>
 Min<br>
 Max<br>
 Ave<br>
 Count<br>
 #### Climate App<br>
-In order for me to create an app for my data anaylsis, I had to create dictionaries for the data I retreived from Pandas. Once I was able to create dictionaries, I used for loops to pull all the information needed to create each app.
+In order for me to create an app for my data analysis, I had to create dictionaries for the data I retrieved from Pandas. Once I was able to create dictionaries, I used for loops to pull all the information needed to create each app.
 
 
 ## Results<br>
 ![Precipitation](https://github.com/llhabers/sqlalchemy-challenge/blob/main/12_Months_Precipitation_Data.png)<br>
 ![Histogram_Temperature](https://github.com/llhabers/sqlalchemy-challenge/blob/main/12_Months_of_Temperature_for_USC00519281.png)<br>
 
-I was able to use python, SQLAlchemy to do some basic climate analysis and data exploration of my climate database. With the help of ORM queries, Pandas and Matplotlib, I was able to use the database to find out which dates shows the most precipitation. Being able to view this data would let me know the best time period I should travel to Honolulu. I was also able to see the avaerage temperature in Honolulu as well as seeing the frequency of days with the average temperature.<br>
+I was able to use python, SQLAlchemy to do some basic climate analysis and data exploration of my climate database. With the help of ORM queries, Pandas and Matplotlib, I was able to use the database to find out which dates shows the most precipitation. Being able to view this data would let me know the best time period I should travel to Honolulu. I was also able to see the average temperature in Honolulu as well as seeing the frequency of days with the average temperature.<br>
